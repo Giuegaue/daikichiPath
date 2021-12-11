@@ -1,0 +1,27 @@
+package com.zach.daikichiPath;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@SpringBootApplication
+@RestController
+public class DaikichiPathApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(DaikichiPathApplication.class, args);
+    }
+    
+    @RequestMapping("/m/dikichi/travel/{city}")
+    public String travel(@PathVariable("city") String city){
+    	return "Congratulations! You will soon travel to " + city + "!";
+    } 
+    
+    /*@RequestMapping("/m/dikichi/travel/{num}")
+    public String fortuneCookie(@PathVariable("num") int num){
+    	return num %2 == 0 ;
+    }*/
+}
